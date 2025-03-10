@@ -44,4 +44,3 @@ CEO_id = 6573305982
 CEO_user_name = "@Seyitgeldi"
 
 Webhook_dev_id = 6180286860
-Webhook_dev_username = "@VDZuy15inTM"
