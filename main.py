@@ -24,6 +24,19 @@ def sent_to_ceo(message):
     bot.send_message(dt.CEO_id,txt)
 
 
+@app.route("/", methods=["GET"])
+def index():
+    return "Bot is running!", 200
+
+
+@app.route('/webhook', methods=['POST'])
+def webhook():
+    json_str = request.get_data().decode('UTF-8')
+    update = telebot.types.Update.de_json(json_str)
+    bot.process_new_updates([update])
+    return '', 200
+
+
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
 
