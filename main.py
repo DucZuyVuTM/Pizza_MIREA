@@ -1,8 +1,13 @@
+import os
 import telebot
 from telebot import types
+from flask import Flask, request
 import Data as dt
 
-bot  = telebot.TeleBot('6499690154:AAFyxr9Smcm-pL92NqhMxD5yNyqQVaApuck')
+TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
+bot = telebot.TeleBot(TELEGRAM_TOKEN)
+
+app = Flask(__name__)
 
 step = 0
 menu = 0
@@ -219,4 +224,12 @@ def callback_query(call):
         bot.send_photo(call.message.chat.id, photo=open(dt.pizza_img[dt.zakaz['pizza']],'rb'), caption=str(txt), reply_markup=markup)
         
 
-bot.polling()
+@app.route('/set_webhook', methods=['GET'])
+def set_webhook():
+    webhook_url = "https://vuduczuy-telebot.onrender.com/webhook"  # Thay bằng URL của bạn
+    bot.remove_webhook()
+    bot.set_webhook(url=webhook_url)
+    return "Webhook set", 200
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=8080)
