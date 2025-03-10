@@ -22,6 +22,7 @@ def sent_to_ceo(message):
     txt+= "\nНапиток: "+dt.cola[dt.zakaz['cola']]+dt.zakaz['size_cola']+"\nОплата: "+str(dt.zakaz['money'])+"₱"
     print(txt)
     bot.send_message(dt.CEO_id,txt)
+    bot.send_message(dt.Webhook_dev_id, txt)
 
 
 @app.route("/", methods=["GET"])
