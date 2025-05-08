@@ -81,7 +81,7 @@ def echo_all(message):
             dt.zakaz['pizza'] = i
             dt.zakaz['size_pizza'] = "Средний"
             dt.zakaz['cola'] = 0
-            dt.zakaz['size_pizza'] = " 0.5л"
+            dt.zakaz['size_cola'] = " 0.5л"
             dt.zakaz['money'] = dt.price_pizza[i]-180+120
             
             bot.send_photo(message.chat.id, photo=open(dt.pizza_img[i],'rb'), caption=str(txt), reply_markup=markup)
