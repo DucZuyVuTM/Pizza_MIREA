@@ -114,7 +114,7 @@ def echo_all(message):
 
     if message.text == "Сброс":
         dt.zakaz = {'pizza':0, 'size_pizza':"0", 'cola':0, 'size_cola':"0", 'money':0}
-        step = 0;
+        step = 0
         menu = 0
         
 
@@ -199,7 +199,7 @@ def callback_query(call):
         txt = "Ваш заказ в пути, спасибо за покупку !"
         bot.send_message(call.message.chat.id, txt)
         dt.zakaz = {'pizza':0, 'size_pizza':"0", 'cola':0, 'size_cola':"0", 'money':0}
-        step = 0;
+        step = 0
         menu = 0
 
     if call.data == "Sent" and step==5:
@@ -207,7 +207,7 @@ def callback_query(call):
         txt = "Ваш заказ в пути, спасибо за покупку !"
         bot.send_message(call.message.chat.id, txt)
         dt.zakaz = {'pizza':0, 'size_pizza':"0", 'cola':0, 'size_cola':"0", 'money':0}
-        step = 0;
+        step = 0
         menu = 0
         
 
@@ -226,9 +226,9 @@ def callback_query(call):
             dt.zakaz['size_cola'] = " 1.0л"
 
         markup = types.InlineKeyboardMarkup()
-        btn1 = types.InlineKeyboardButton("Оплата по номеру телефон", callback_data="Sent_phone")
-        btn2 = types.InlineKeyboardButton("Оплата по номеру карта", callback_data="Sent_kart")
-        btn3 = types.InlineKeyboardButton("Оплата наличи", callback_data="Sent_hand")
+        btn1 = types.InlineKeyboardButton("Оплата по номеру телефонf", callback_data="Sent_phone")
+        btn2 = types.InlineKeyboardButton("Оплата по номеру карты", callback_data="Sent_kart")
+        btn3 = types.InlineKeyboardButton("Оплата наличными", callback_data="Sent_hand")
         markup.add(btn1)
         markup.add(btn2)
         markup.add(btn3)
