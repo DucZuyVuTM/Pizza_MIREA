@@ -226,7 +226,7 @@ def callback_query(call):
             dt.zakaz['size_cola'] = " 1.0л"
 
         markup = types.InlineKeyboardMarkup()
-        btn1 = types.InlineKeyboardButton("Оплата по номеру телефонf", callback_data="Sent_phone")
+        btn1 = types.InlineKeyboardButton("Оплата по номеру телефона", callback_data="Sent_phone")
         btn2 = types.InlineKeyboardButton("Оплата по номеру карты", callback_data="Sent_kart")
         btn3 = types.InlineKeyboardButton("Оплата наличными", callback_data="Sent_hand")
         markup.add(btn1)
